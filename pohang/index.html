@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 한국 해양수산자원 대시보드</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                         'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2e8b57 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1em;
+            margin-bottom: 50px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .icon { font-size: 3.5em; margin-bottom: 15px; }
+        .card-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 12px;
+        }
+        .card-desc {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+        footer {
+            margin-top: 50px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌊 한국 해양수산자원 대시보드</h1>
+        <p class="subtitle">바다숲, 해조류 양식, 수산물 생산량의 시공간적 분포</p>
+        
+        <div class="cards">
+            <a href="eocho-map.html" class="card">
+                <div class="icon">⚓</div>
+                <div class="card-title">인공어초 분포 지도</div>
+                <div class="card-desc">
+                    제주 해역에 시설된 인공어초 단지의 위치, 어초 종류, 
+                    시설물량을 인터랙티브 지도로 확인합니다.
+                </div>
+            </a>
+            
+            <a href="seaweed-map.html" class="card">
+                <div class="icon">🌿</div>
+                <div class="card-title">해조류 양식 분포 지도</div>
+                <div class="card-desc">
+                    전국 연안의 해조류 양식장 위치와 양식 방법, 
+                    면적별 분포를 시각화합니다.
+                </div>
+            </a>
+            
+            <a href="seaweed-trend.html" class="card">
+                <div class="icon">📈</div>
+                <div class="card-title">미역 생산량 추이</div>
+                <div class="card-desc">
+                    1996년부터의 미역 및 해조류 생산량 변화를 
+                    시간축 애니메이션으로 탐색합니다.
+                </div>
+            </a>
+        </div>
+        
+        <footer>
+            데이터 출처: 한국수산자원공단(FIRA), 공공데이터포털
+        </footer>
+    </div>
+</body>
+</html>
